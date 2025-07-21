@@ -2,156 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Image Uploader</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
-
+    <title>Lavender Image Uploader</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(145deg, #e6e6fa, #f8e8ff);
-            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #e6e6fa, #f8f0ff);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #4b0082;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            animation: fadeIn 1s ease-in-out;
         }
 
         .upload-container {
             background-color: #fff0f5;
-            padding: 35px 40px;
-            border-radius: 18px;
-            box-shadow: 0 12px 30px rgba(75, 0, 130, 0.2);
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(75, 0, 130, 0.2);
             text-align: center;
-            max-width: 420px;
+            max-width: 400px;
             width: 100%;
-            animation: popIn 0.6s ease-in-out;
-            transition: all 0.3s;
-        }
-
-        .upload-container:hover {
-            transform: scale(1.02);
-            box-shadow: 0 16px 35px rgba(138, 43, 226, 0.3);
         }
 
         h2 {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             color: #6a0dad;
-            font-size: 24px;
         }
 
         input[type="file"] {
-            padding: 12px;
+            margin: 15px 0;
+            padding: 8px;
             border: 2px dashed #d8bfd8;
-            border-radius: 8px;
-            background-color: #fdfdff;
+            border-radius: 5px;
+            background-color: #f5f5f5;
             width: 100%;
-            outline: none;
-            transition: border 0.3s;
-        }
-
-        input[type="file"]:hover {
-            border-color: #b57edc;
         }
 
         button {
             background-color: #b57edc;
             border: none;
-            padding: 12px 30px;
-            border-radius: 30px;
+            padding: 10px 20px;
+            border-radius: 25px;
             color: white;
             font-size: 16px;
             cursor: pointer;
-            margin-top: 20px;
-            transition: all 0.3s ease;
+            transition: 0.3s ease;
         }
 
         button:hover {
             background-color: #a060c0;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(176, 112, 192, 0.3);
         }
 
         .footer {
             margin-top: 20px;
-            font-size: 13px;
+            font-size: 14px;
             color: #6a0dad;
-        }
-
-        #preview {
-            margin-top: 15px;
-            max-width: 100%;
-            border-radius: 10px;
-            display: none;
-        }
-
-        @keyframes popIn {
-            0% {
-                transform: scale(0.95);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .upload-container {
-                padding: 25px 20px;
-            }
         }
     </style>
 </head>
 <body>
     <div class="upload-container">
-        <h2>🌸 Lavender Image Uploader 🌸</h2>
+        <h2>🌸 Image Uploader 🌸</h2>
         <form action="/upload" method="POST" enctype="multipart/form-data">
-            <input type="file" name="myImage" accept="image/*" required onchange="previewImage(event)">
-            <br>
-            <img id="preview" />
-            <br>
+            <input type="file" name="myImage" accept="image/*" required>
+            <br><br>
             <button type="submit">Upload</button>
         </form>
         <div class="footer">
-            Only JPG, PNG, GIF files • Max size: 1MB
+            Supported formats: JPG, PNG, GIF • Max size: 1MB
         </div>
     </div>
-
-    <script>
-        function previewImage(event) {
-            const input = event.target;
-            const preview = document.getElementById('preview');
-            const file = input.files[0];
-
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    preview.src = e.target.result;
-                    preview.style.display = 'block';
-                };
-                reader.readAsDataURL(file);
-            } else {
-                preview.style.display = 'none';
-            }
-        }
-    </script>
 </body>
 </html>
+
+
