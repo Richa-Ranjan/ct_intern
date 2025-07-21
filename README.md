@@ -108,8 +108,7 @@ This sets me up for more advanced full-stack development projects and collaborat
 
 ## 💼 Want to See More?
 
-Check out my portfolio: [https://richaranjan04.github.io/portfolio/](https://richaranjan04.github.io/portfolio/)
-
+Check out my linkdln: https://www.linkedin.com/in/rranjan-tech
 ---
 
 ## 📝 Acknowledgements
